@@ -3,18 +3,30 @@
 <head>
 </head>
 <body>
-	<script>
-        let num = Math.floor(Math.random() * 101);
-
-        let guess = prompt("guess a number between 1 and 100");
-
-        if(num == guess)
-        {
-            alert("Got it!");
-        }else{
-            alert("Sorry!  You guessed " + guess + " and the number was " + num);
-        }
-
-	</script>
+	<script> 
+        count = 0; 
+        let num = Math.floor(Math.random() * 100) + 1; 
+        while (1) { 
+          let guess = prompt("guess a number between 1 and 100"); 
+          if (num < guess) { 
+            count = count + 1; 
+            alert("higher"); 
+          } else if (num > guess) { 
+            count = count + 1; 
+            alert("lower"); 
+          } else if (guess == num) { 
+            count = count + 1; 
+            alert("Got it!"); 
+            alert( 
+              "Congratulations! You guessed the correct number, which was " + 
+                guess + 
+                " and it took you " + 
+                count + 
+                " guesses" 
+            ); 
+            break; 
+          } 
+        } 
+      </script>
 </body>
 </html>
